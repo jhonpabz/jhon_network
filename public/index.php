@@ -44,6 +44,8 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
+error_reporting(E_ALL ^ E_DEPRECATED);
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
