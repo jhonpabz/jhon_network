@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>JhonPabz Network</h1>
+    <a href="/jhonpabz">Lets Go!</a>
 </body>
 </html>
