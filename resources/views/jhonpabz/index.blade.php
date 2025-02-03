@@ -1,14 +1,14 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JhonPabz Network | Home</title>
-</head>
-<body>
+<x-layout>
     <h2>Currently Available Network</h2>
 
     <ul>
-        <li>Jhonpabz Gaming!</li>
+        @foreach ($jhonpabz as $item)
+            <li>
+                <x-card href="/jhonpabz/{{ $item['id'] }}" :highlight="$item['skill'] > 98">
+                    <h3>{{ $item['name'] }}</h3>
+                </x-card>
+            </li>
+        @endforeach
     </ul>
-</body>
-</html>
+
+</x-layout>
