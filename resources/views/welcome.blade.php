@@ -10,8 +10,8 @@
 </head>
 
 <body class="text-center px-8 py-12">
-    <h1 class="text-xl">JhonPabz Network</h1>
-    <a href="/jhonpabz">Lets Go!</a>
+    <h1 class="mb-8">JhonPabz Network</h1>
+    <a href="/jhonpabz" class="btn">Lets Go!</a>
 </body>
 
 </html>
