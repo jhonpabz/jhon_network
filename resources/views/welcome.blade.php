@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JhonPabz Network</title>
+
+    @vite('resources/css/app.css')
 </head>
+
 <body>
     <h1>JhonPabz Network</h1>
     <a href="/jhonpabz">Lets Go!</a>
