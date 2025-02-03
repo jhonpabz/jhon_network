@@ -18,5 +18,17 @@ Route::get('/', function () {
 });
 
 Route::get('/jhonpabz', function () {
-    return view('jhonpabz.index');
+    $jhonpabz = [
+        ["name" => "lyka", "skill" => "99", "id" => "1"],
+        ["name" => "cesar", "skill" => "98", "id" => "2"],
+    ];
+    return view('jhonpabz.index', ["greeting" => "Hell no!", "jhonpabz" =>  $jhonpabz]);
+});
+
+Route::get('/jhonpabz/create', function () {
+    return view('jhonpabz.create');
+});
+
+Route::get('/jhonpabz/{id}', function ($id) {
+    return view('jhonpabz.show', ["id" => $id]);
 });
