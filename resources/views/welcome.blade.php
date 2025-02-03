@@ -1,5 +1,5 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,9 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
-    <h1>JhonPabz Network</h1>
+<body class="text-center px-8 py-12">
+    <h1 class="text-xl">JhonPabz Network</h1>
     <a href="/jhonpabz">Lets Go!</a>
 </body>
+
 </html>
