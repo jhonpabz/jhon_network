@@ -3,5 +3,5 @@
 <div @class(['highlight test' => $highlight, 'card'])>
     {{ $slot }}
     {{-- <a href="{{ $attributes->get('href') }}" class="btn">View details</a> //pass specific attribute --}}
-    <a href="{{ $attributes }}" class="btn">View details</a>
+    <a {{ $attributes }} class="btn">View details</a>
 </div>
