@@ -19,13 +19,14 @@ class JhonpabzController extends Controller
     public function show($id)
     {
         // route --> /jhonpabz/{id}
-
+        $jhonpabz = Jhonpabz::findOrFail($id);
+        return view('jhonpabz.show', ["jhonpabz" => $jhonpabz]);
     }
 
-    public function create($id)
+    public function create()
     {
         // route --> /jhonpabz/create
-        // render a create view (with web form) to users
+        return view('jhonpabz.create');
     }
 
     public function store($id)

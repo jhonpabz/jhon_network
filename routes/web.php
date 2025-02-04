@@ -20,11 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/jhonpabz', [JhonpabzController::class, 'index']);
-
-Route::get('/jhonpabz/create', function () {
-    return view('jhonpabz.create');
-});
-
-Route::get('/jhonpabz/{id}', function ($id) {
-    return view('jhonpabz.show', ["id" => $id]);
-});
+Route::get('/jhonpabz/create',  [JhonpabzController::class, 'create']);
+Route::get('/jhonpabz/{id}',  [JhonpabzController::class, 'show']);
