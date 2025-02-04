@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JhonpabzController;
+use App\Models\Jhonpabz;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/jhonpabz', function () {
-    $jhonpabz = [
-        ["name" => "lyka", "skill" => "99", "id" => "1"],
-        ["name" => "cesar", "skill" => "98", "id" => "2"],
-    ];
-    return view('jhonpabz.index', ["greeting" => "Hell no!", "jhonpabz" =>  $jhonpabz]);
-});
+Route::get('/jhonpabz', [JhonpabzController::class, 'index']);
 
 Route::get('/jhonpabz/create', function () {
     return view('jhonpabz.create');
