@@ -13,8 +13,8 @@
     <header>
         <nav>
             <h1>Jhon Network</h1>
-            <a href="/jhonpabz">All Networks</a>
-            <a href="/jhonpabz/create">Create New Network</a>
+            <a href="{{ route('jhonpabz.index') }}">All Networks</a>
+            <a href="{{ route('jhonpabz.create') }}">Create New Network</a>
         </nav>
     </header>
 

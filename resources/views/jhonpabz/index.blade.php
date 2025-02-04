@@ -4,7 +4,7 @@
     <ul>
         @foreach ($jhonpabz as $item)
             <li>
-                <x-card href="/jhonpabz/{{ $item->id }}" :highlight="$item->skill > 75">
+                <x-card href="{{ route('jhonpabz.show', $item->id) }}" :highlight="$item->skill > 75">
                     <h3>{{ $item->name }}</h3>
                 </x-card>
             </li>
