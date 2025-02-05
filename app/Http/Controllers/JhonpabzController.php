@@ -11,7 +11,7 @@ class JhonpabzController extends Controller
     public function index()
     {
         // route --> /jhonpabz/
-        $jhonpabz = Jhonpabz::orderBy('created_at', 'desc')->get();
+        $jhonpabz = Jhonpabz::orderBy('created_at', 'desc')->paginate(10);
 
         return view('jhonpabz.index', ["jhonpabz" =>  $jhonpabz]);
     }

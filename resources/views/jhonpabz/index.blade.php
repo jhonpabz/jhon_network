@@ -11,4 +11,5 @@
         @endforeach
     </ul>
 
+    {{ $jhonpabz->links() }}
 </x-layout>
