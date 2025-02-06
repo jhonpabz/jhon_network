@@ -30,9 +30,18 @@ class JhonpabzController extends Controller
         return view('jhonpabz.create', ['network' => $network]);
     }
 
-    public function store($id)
+    public function store(Request $request)
     {
-        // route --> /jhonpabz/ (POST)
-        // handle POST request to store a new ninja record in table
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'skill' => 'required|integer|min:0|max:100',
+            'bio' => 'required|string|min:20|max:1000',
+            'network_id' => 'required|exists:networks,id',
+        ]);
+
+        Jhonpabz::create($validated);
+
+        return redirect()->route('jhonpabz.index');
     }
 }

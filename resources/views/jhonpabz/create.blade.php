@@ -1,5 +1,5 @@
 <x-layout>
-    <form action="" method="">
+    <form action="{{ route('jhonpabz.store') }}" method="POST">
         @csrf
 
         <h2>Create a New Jhonpabz</h2>
@@ -21,7 +21,9 @@
         <select id="network_id" name="network_id" required>
             <option value="" disabled selected>Select a network</option>
             @foreach ($network as $item)
-                <option value="{{ $item->item }}">{{ $item->name }}</option>
+                <option value="{{ $item->id }}" {{ $item->id == old('network_id') ? 'selected' : '' }}>
+                    {{ $item->name }}
+                </option>
             @endforeach
 
         </select>

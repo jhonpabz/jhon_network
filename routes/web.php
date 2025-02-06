@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/jhonpabz', [JhonpabzController::class, 'index'])->name('jhonpabz.index');
 Route::get('/jhonpabz/create',  [JhonpabzController::class, 'create'])->name('jhonpabz.create');
 Route::get('/jhonpabz/{id}',  [JhonpabzController::class, 'show'])->name('jhonpabz.show');
+Route::post('/jhonpabz', [JhonpabzController::class, 'store'])->name('jhonpabz.store');

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jhonpabz extends Model
 {
-    protected $fillable = ['name', 'skill', 'bio'];
+    protected $fillable = ['name', 'skill', 'bio', 'network_id'];
     use HasFactory;
 
     public function network()
