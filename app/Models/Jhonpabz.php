@@ -9,4 +9,9 @@ class Jhonpabz extends Model
 {
     protected $fillable = ['name', 'skill', 'bio'];
     use HasFactory;
+
+    public function network()
+    {
+        return $this->belongsTo(Network::class);
+    }
 }

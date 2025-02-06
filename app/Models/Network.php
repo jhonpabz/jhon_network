@@ -10,4 +10,9 @@ class Network extends Model
     protected $fillable = ['name', 'location', 'description'];
 
     use HasFactory;
+
+    public function jhonpabzs()
+    {
+        return $this->hasMany(Jhonpabz::class);
+    }
 }
