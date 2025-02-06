@@ -11,7 +11,7 @@ class JhonpabzController extends Controller
     public function index()
     {
         // route --> /jhonpabz/
-        $jhonpabz = Jhonpabz::orderBy('created_at', 'desc')->paginate(10);
+        $jhonpabz = Jhonpabz::with('network')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('jhonpabz.index', ["jhonpabz" =>  $jhonpabz]);
     }
@@ -19,7 +19,7 @@ class JhonpabzController extends Controller
     public function show($id)
     {
         // route --> /jhonpabz/{id}
-        $jhonpabz = Jhonpabz::findOrFail($id);
+        $jhonpabz = Jhonpabz::with('network')->findOrFail($id);
         return view('jhonpabz.show', ["jhonpabz" => $jhonpabz]);
     }
 
