@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jhonpabz;
+use App\Models\Network;
 use Illuminate\Http\Request;
 
 
@@ -25,8 +26,8 @@ class JhonpabzController extends Controller
 
     public function create()
     {
-        // route --> /jhonpabz/create
-        return view('jhonpabz.create');
+        $network = Network::all();
+        return view('jhonpabz.create', ['network' => $network]);
     }
 
     public function store($id)
