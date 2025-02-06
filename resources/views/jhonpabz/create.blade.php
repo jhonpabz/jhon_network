@@ -1,5 +1,7 @@
 <x-layout>
     <form action="" method="">
+        @csrf
+
         <h2>Create a New Jhonpabz</h2>
 
         <!-- Jhonpabz Name -->
