@@ -17,10 +17,10 @@ class JhonpabzController extends Controller
         return view('jhonpabz.index', ["jhonpabz" =>  $jhonpabz]);
     }
 
-    public function show($id)
+    public function show(Jhonpabz $jhonpabz)
     {
-        // route --> /jhonpabz/{id}
-        $jhonpabz = Jhonpabz::with('network')->findOrFail($id);
+        // $jhonpabz = Jhonpabz::with('network')->findOrFail($id);
+        $jhonpabz->load("network");
         return view('jhonpabz.show', ["jhonpabz" => $jhonpabz]);
     }
 
@@ -45,9 +45,9 @@ class JhonpabzController extends Controller
         return redirect()->route('jhonpabz.index')->with('success', 'Jhonpabz Network Created !');
     }
 
-    public function destroy($id)
+    public function destroy(Jhonpabz $jhonpabz)
     {
-        $jhonpabz = Jhonpabz::findOrFail($id);
+        // $jhonpabz = Jhonpabz::findOrFail($id);
         $jhonpabz->delete();
 
         return redirect()->route('jhonpabz.index')->with('success', 'Jhonpabz Network Deleted !');;
