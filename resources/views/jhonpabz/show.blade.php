@@ -12,4 +12,10 @@
         <p></p>{{ $jhonpabz->network->description }}</p>
     </div>
 
+    <form action="{{ route('jhonpabz.destroy', $jhonpabz->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn my-4">Delete</button>
+    </form>
+
 </x-layout>

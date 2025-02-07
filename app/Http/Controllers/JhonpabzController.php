@@ -44,4 +44,12 @@ class JhonpabzController extends Controller
 
         return redirect()->route('jhonpabz.index');
     }
+
+    public function destroy($id)
+    {
+        $jhonpabz = Jhonpabz::findOrFail($id);
+        $jhonpabz->delete();
+
+        return redirect()->route('jhonpabz.index');
+    }
 }
