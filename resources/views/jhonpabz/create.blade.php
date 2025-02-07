@@ -10,11 +10,11 @@
 
         <!-- Jhonpabz Strength -->
         <label for="skill">Jhonpabz Skill (0-100):</label>
-        <input type="number" id="skill" name="skill" required>
+        <input type="number" id="skill" name="skill" value="{{ old('skill') }}" required>
 
         <!-- Jhonpabz Bio -->
         <label for="bio">Biography:</label>
-        <textarea rows="5" id="bio" name="bio" required></textarea>
+        <textarea rows="5" id="bio" name="bio" required>{{ old('bio') }}</textarea>
 
         <!-- select a network -->
         <label for="network_id">Network:</label>
