@@ -42,7 +42,7 @@ class JhonpabzController extends Controller
 
         Jhonpabz::create($validated);
 
-        return redirect()->route('jhonpabz.index');
+        return redirect()->route('jhonpabz.index')->with('success', 'Jhonpabz Network Created !');
     }
 
     public function destroy($id)
@@ -50,6 +50,6 @@ class JhonpabzController extends Controller
         $jhonpabz = Jhonpabz::findOrFail($id);
         $jhonpabz->delete();
 
-        return redirect()->route('jhonpabz.index');
+        return redirect()->route('jhonpabz.index')->with('success', 'Jhonpabz Network Deleted !');;
     }
 }
