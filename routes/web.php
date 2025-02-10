@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JhonpabzController;
 use App\Models\Jhonpabz;
+use App\Http\Controllers\LinkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::delete('/jhonpabz/{jhonpabz}',  [JhonpabzController::class, 'destroy'])->
 Route::get('/get-servers', function () {
     return view('components.h5-links-dynamic');
 });
+
+Route::get('/links', [LinkController::class, 'index'])->name('links');
+Route::resource('links', LinkController::class);
