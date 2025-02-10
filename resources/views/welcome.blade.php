@@ -17,6 +17,7 @@
 
 <body class="text-center px-8 py-12">
     <x-banner-swipper />
+    <x-h5-links />
     <h1 class="mb-8">JhonPabz Network</h1>
     <a href="/jhonpabz" class="btn">Lets Go!</a>
 </body>
