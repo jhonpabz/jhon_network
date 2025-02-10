@@ -22,6 +22,7 @@
             <a href="{{ route('jhonpabz.index') }}">All Networks</a>
             <a href="{{ route('jhonpabz.create') }}">Create New Network</a>
             <a href="/settings">Landing Page Settings</a>
+            <a href="/links">Links</a>
         </nav>
     </header>
 
