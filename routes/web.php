@@ -24,3 +24,7 @@ Route::get('/jhonpabz/create',  [JhonpabzController::class, 'create'])->name('jh
 Route::get('/jhonpabz/{jhonpabz}',  [JhonpabzController::class, 'show'])->name('jhonpabz.show');
 Route::post('/jhonpabz', [JhonpabzController::class, 'store'])->name('jhonpabz.store');
 Route::delete('/jhonpabz/{jhonpabz}',  [JhonpabzController::class, 'destroy'])->name('jhonpabz.destroy');
+
+Route::get('/get-servers', function () {
+    return view('components.h5-links-dynamic');
+});
