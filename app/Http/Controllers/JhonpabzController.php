@@ -24,6 +24,13 @@ class JhonpabzController extends Controller
         return view('jhonpabz.show', ["jhonpabz" => $jhonpabz]);
     }
 
+    // public function settings(Jhonpabz $jhonpabz)
+    // {
+    //     // $jhonpabz = Jhonpabz::with('network')->findOrFail($id);
+    //     $jhonpabz->load("network");
+    //     return view('jhonpabz.settings', ["jhonpabz" => $jhonpabz]);
+    // }
+
     public function create()
     {
         $network = Network::all();
