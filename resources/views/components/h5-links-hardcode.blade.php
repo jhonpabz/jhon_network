@@ -1,10 +1,28 @@
 <?php
-$servers = [['id' => 1, 'ping' => '6ms', 'url' => 'test127.com'], ['id' => 2, 'ping' => '41ms', 'url' => 'test124.com'], ['id' => 3, 'ping' => '64ms', 'url' => 'test133.com'], ['id' => 4, 'ping' => '44ms', 'url' => 'test132.com'], ['id' => 5, 'ping' => '64ms', 'url' => 'test130.com']];
+if (!function_exists('getRandomServers')) {
+    function getRandomServers($count = 5)
+    {
+        $serverUrls = ['test127.com', 'test124.com', 'test133.com', 'test132.com', 'test130.com', 'test128.com', 'test125.com', 'test134.com', 'test131.com', 'test129.com'];
+
+        $selectedUrls = array_rand(array_flip($serverUrls), $count);
+        return array_map(
+            function ($url, $index) {
+                return [
+                    'id' => $index + 1,
+                    'ping' => rand(5, 100) . 'ms',
+                    'url' => $url,
+                ];
+            },
+            $selectedUrls,
+            array_keys($selectedUrls),
+        );
+    }
+}
 ?>
 
-<div class="flex bg-gray-900 justify-center items-center py-10">
-    <div class="w-full max-w-md space-y-4">
-        <?php foreach ($servers as $server): ?>
+<div class="bg-white flex justify-center items-center min-h-screen">
+    <div id="server-container" class="w-full max-w-md space-y-4">
+        <?php foreach (getRandomServers() as $server): ?>
         <div
             class="flex items-center justify-between bg-gradient-to-r from-red-500 to-red-700 p-4 rounded-xl shadow-lg text-white">
             <div class="flex items-center text-left space-x-3">
