@@ -25,7 +25,7 @@ if (!function_exists('getRandomServers')) {
         <?php foreach (getRandomServers() as $server): ?>
         <div
             class="flex items-center justify-between bg-gradient-to-r from-red-500 to-red-700 p-4 rounded-xl shadow-lg text-white">
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center text-left space-x-3">
                 <span
                     class="bg-yellow-300 text-gray-900 font-bold w-10 h-10 flex items-center justify-center rounded-full text-lg">
                     <?= $server['id'] ?>
