@@ -32,7 +32,8 @@ if (!function_exists('getRandomServers')) {
                 </span>
                 <div>
                     <p class="text-sm font-medium">Ping: <span class="font-bold"> <?= $server['ping'] ?> </span></p>
-                    <p class="text-md font-semibold"> <?= $server['url'] ?> </p>
+                    <p class="text-md font-semibold">
+                        <?= preg_replace('/https?:\/\//', '', rtrim($server['url'], '/')) ?> </p>
                 </div>
             </div>
             <a class="btn-link" href="<?= $server['url'] ?>" target="_blank"
