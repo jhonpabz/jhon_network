@@ -1,21 +1,21 @@
 <?php
+use App\Models\Link;
+
 if (!function_exists('getRandomServers')) {
     function getRandomServers($count = 5)
     {
-        $serverUrls = ['test127.com', 'test124.com', 'test133.com', 'test132.com', 'test130.com', 'test128.com', 'test125.com', 'test134.com', 'test131.com', 'test129.com'];
+        // Get links from database where kind is 'btn-link', randomly select $count items
+        $links = Link::where('kind', 'btn-link')->inRandomOrder()->limit($count)->get();
 
-        $selectedUrls = array_rand(array_flip($serverUrls), $count);
-        return array_map(
-            function ($url, $index) {
+        return $links
+            ->map(function ($link, $index) {
                 return [
                     'id' => $index + 1,
                     'ping' => rand(5, 100) . 'ms',
-                    'url' => $url,
+                    'url' => $link->website,
                 ];
-            },
-            $selectedUrls,
-            array_keys($selectedUrls),
-        );
+            })
+            ->all();
     }
 }
 ?>
@@ -35,7 +35,7 @@ if (!function_exists('getRandomServers')) {
                     <p class="text-md font-semibold"> <?= $server['url'] ?> </p>
                 </div>
             </div>
-            <a href="https://<?= $server['url'] ?>" target="_blank"
+            <a class="btn-link" href="<?= $server['url'] ?>" target="_blank"
                 class="bg-white text-red-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200 transition">Access</a>
         </div>
         <?php endforeach; ?>
