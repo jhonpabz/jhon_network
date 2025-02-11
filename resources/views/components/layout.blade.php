@@ -21,8 +21,9 @@
             <h1>Jhon Network</h1>
             <a href="{{ route('jhonpabz.index') }}">All Networks</a>
             <a href="{{ route('jhonpabz.create') }}">Create New Network</a>
-            <a href="/settings">Landing Page Settings</a>
-            <a href="/links">Links</a>
+            {{-- <a href="/settings">Landing Page Settings</a> --}}
+            <a class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-900" href="/">Landing Page</a>
+            <a class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-900" href="/links">Links Web Admin</a>
         </nav>
     </header>
 
