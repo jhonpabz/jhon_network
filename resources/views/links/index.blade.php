@@ -51,12 +51,13 @@
                                     <td
                                         class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
                                         <a href="{{ route('links.edit', $link) }}"
-                                            class="text-indigo-600 hover:text-indigo-900 mr-4">Edit</a>
+                                            class="bg-indigo-600 text-white px-3 py-1 rounded hover:bg-indigo-900 mr-4">Edit</a>
                                         <form action="{{ route('links.destroy', $link) }}" method="POST"
                                             class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900"
+                                            <button type="submit"
+                                                class="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-900"
                                                 onclick="return confirm('Are you sure you want to delete this link?')">Delete</button>
                                         </form>
                                     </td>
