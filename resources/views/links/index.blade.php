@@ -49,7 +49,7 @@
                                         </a>
                                     </td>
                                     <td
-                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
+                                        class="whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
                                         <a href="{{ route('links.edit', $link) }}"
                                             class="bg-indigo-600 text-white px-3 py-1 rounded hover:bg-indigo-900 mr-4">Edit</a>
                                         <form action="{{ route('links.destroy', $link) }}" method="POST"

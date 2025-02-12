@@ -21,7 +21,8 @@
                         </div>
 
                         <div class="mb-4">
-                            <label for="kind" class="block text-gray-700 text-sm font-bold mb-2">Kind</label>
+                            <label for="kind" class="block text-gray-700 text-sm font-bold mb-2">Kind (Class
+                                name)</label>
                             <input type="text" name="kind" id="kind"
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 value="{{ old('kind', $link->kind) }}" required>
