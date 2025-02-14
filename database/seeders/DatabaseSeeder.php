@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             NetworkSeeder::class,
             JhonpabzSeeder::class,
             AdminUserSeeder::class,
+            LinksTableSeeder::class,
         ]);
     }
 }

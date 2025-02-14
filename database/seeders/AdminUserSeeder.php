@@ -12,7 +12,7 @@ class AdminUserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
-            'email' => env('ADMIN_EMAIL', 'admin@example.com'),
+            'email' => env('ADMIN_EMAIL', 'admin@jhonpabz.com'),
             'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
         ]);
     }
