@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhon Network</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config('app.name', 'Laravel') }}</title>
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Add Heroicons CDN -->
     <script src="https://unpkg.com/@heroicons/v2/24/outline/esm/index.js"></script>
 </head>
 
-<body class="bg-gray-100">
+<body class="antialiased">
+    <!-- Auth Status -->
+    <div class="absolute top-0 right-0 mt-4 mr-4">
+        @auth
+            <div class="flex items-center space-x-4">
+                <span class="text-gray-600">{{ Auth::user()->name }}</span>
+                <form method="POST" action="{{ route('logout') }}" class="inline">
+                    @csrf
+                    <button type="submit"
+                        class="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        @else
+            <a href="{{ route('login') }}"
+                class="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                Login
+            </a>
+        @endauth
+    </div>
+
+    <!-- Navbar -->
+    <x-navbar-admin />
+
     @if (session('success'))
         <div id="flash"
             class="fixed top-4 right-4 z-50 p-4 rounded-lg bg-green-50 text-green-500 font-bold shadow-lg">
@@ -76,6 +99,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    @vite('resources/js/app.js')
 </body>
 
 </html>

@@ -38,5 +38,18 @@ Route::get('/get-servers', function () {
     return view('components.h5-links-dynamic');
 });
 
-Route::get('/links', [LinkController::class, 'index'])->name('links');
-Route::resource('links', LinkController::class);
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login')->middleware('guest');
+
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.post');
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/links', [App\Http\Controllers\LinkController::class, 'index'])->name('links.index');
+    Route::get('/links/create', [App\Http\Controllers\LinkController::class, 'create'])->name('links.create');
+    Route::post('/links', [App\Http\Controllers\LinkController::class, 'store'])->name('links.store');
+    Route::get('/links/{link}/edit', [App\Http\Controllers\LinkController::class, 'edit'])->name('links.edit');
+    Route::put('/links/{link}', [App\Http\Controllers\LinkController::class, 'update'])->name('links.update');
+    Route::delete('/links/{link}', [App\Http\Controllers\LinkController::class, 'destroy'])->name('links.destroy');
+});

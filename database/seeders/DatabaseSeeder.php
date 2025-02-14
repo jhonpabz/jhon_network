@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             NetworkSeeder::class,
             JhonpabzSeeder::class,
+            AdminUserSeeder::class,
         ]);
     }
 }
